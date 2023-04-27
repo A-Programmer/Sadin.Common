@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <PackageId>Sadin.Common</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Kamran Sadin</Authors>
+    <Company>Sadin</Company>
+    <CopyRight>Copyright (c) 2022 SadinCo.</CopyRight>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIconUrl>https://api.nuget.org/v3-flatcontainer/ks-utilities/1.0.0.2/icon</PackageIconUrl>
+    <Owners>Kamran Sadin</Owners>
+    <PackageProjectUrl>https://sadin.dev/nuget-packages/sadin-common</PackageProjectUrl>
+    <Summary>Common utilieis and classes for microservices</Summary>
+    <PackageTags>Sadin,Kamran,utility,dotnet,tools</PackageTags>
+    <Title>Sadin.Common</Title>
+    <Description>Common files and classes for Sadin microservices</Description>
+    <ReleaseNotes>First version containing Entity base class and EntityNotFoundException</ReleaseNotes>
+    <RepositoryUrl>https://github.com/A-Programmer/sadin.common</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Exceptions\Base" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
+
+</Project>
