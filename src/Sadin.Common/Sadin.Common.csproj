@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
 
     <PackageId>Sadin.Common</PackageId>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>Kamran Sadin</Authors>
     <Company>Sadin</Company>
     <CopyRight>Copyright (c) 2022 SadinCo.</CopyRight>
@@ -18,7 +18,7 @@
     <PackageTags>Sadin,Kamran,utility,dotnet,tools</PackageTags>
     <Title>Sadin.Common</Title>
     <Description>Common files and classes for Sadin microservices</Description>
-    <ReleaseNotes>DomainEvent abstract class added.</ReleaseNotes>
+    <ReleaseNotes>Fix namespace of Exceptions.</ReleaseNotes>
     <RepositoryUrl>https://github.com/A-Programmer/sadin.common</RepositoryUrl>
   </PropertyGroup>
 

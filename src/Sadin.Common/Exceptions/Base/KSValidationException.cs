@@ -1,6 +1,4 @@
-using Sadin.Common.Exceptions.Base;
-
-namespace Sadin.Cms.Shared.Exceptions.Base;
+namespace Sadin.Common.Exceptions.Base;
 
 public abstract class KSValidationException : KSException
 {
