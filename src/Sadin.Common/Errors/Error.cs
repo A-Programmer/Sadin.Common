@@ -1,7 +1,7 @@
 namespace Sadin.Common.Errors;
 
 /// <summary>
-/// Represents a concrete domain error.
+/// Represents a concrete error.
 /// </summary>
 public sealed class Error : IEquatable<Error>
 {
