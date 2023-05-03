@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace Sadin.Common.Result;
 
 /// <summary>
@@ -121,9 +123,16 @@ public class Result<TValue> : Result
     /// <param name="value">The result value.</param>
     /// <param name="isSuccess">The flag indicating if the result is successful.</param>
     /// <param name="error">The error.</param>
-    protected internal Result(TValue value, bool isSuccess, Error error)
+    protected internal Result(TValue value, bool isSuccess, Error error, int? pageIndex = null, int? totalPages = null, int? totalItems = null,
+        bool? showPagination = null)
         : base(isSuccess, error)
-        => _value = value;
+    {
+        _value = value;
+        PageIndex = pageIndex;
+        TotalPages = totalPages;
+        TotalItems = totalItems;
+        ShowPagination = showPagination;
+    }
 
     /// <summary>
     /// Gets the result value if the result is successful, otherwise throws an exception.
@@ -135,4 +144,43 @@ public class Result<TValue> : Result
         : throw new InvalidOperationException("The value of a failure result can not be accessed.");
 
     public static implicit operator Result<TValue>(TValue value) => Success(value);
+    
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public int? PageIndex { get; private set; }
+
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public int? TotalPages { get; private set; }
+
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public int? TotalItems { get; private set; }
+
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public bool? ShowPagination { get; set; }
+
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public bool? HasPreviousPage
+    {
+        get
+        {
+            if (ShowPagination is null or false)
+                return null;
+
+            PageIndex = PageIndex ?? 0;
+            return (PageIndex > 1);
+        }
+    }
+
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public bool? HasNextPage
+    {
+        get
+        {
+            if (ShowPagination is null or false)
+                return null;
+
+            PageIndex = PageIndex ?? 0;
+            TotalPages = TotalPages ?? 0;
+            return (PageIndex < TotalPages);
+        }
+    }
 }
