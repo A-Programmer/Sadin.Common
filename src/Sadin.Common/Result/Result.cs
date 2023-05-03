@@ -143,6 +143,11 @@ public class Result<TValue> : Result
         ? _value
         : throw new InvalidOperationException("The value of a failure result can not be accessed.");
 
+    public static Result<TValue> CreatePaginatedResult(TValue value, bool isSuccess, Error error, int? pageIndex = null,
+        int? totalPages = null, int? totalItems = null,
+        bool? showPagination = null)
+        => new(value, isSuccess, error, pageIndex, totalPages, totalItems, showPagination);
+
     public static implicit operator Result<TValue>(TValue value) => Success(value);
     
     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
