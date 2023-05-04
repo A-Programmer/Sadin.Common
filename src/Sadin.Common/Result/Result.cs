@@ -142,7 +142,18 @@ public class Result<TValue> : Result
     public TValue Value => IsSuccess
         ? _value
         : throw new InvalidOperationException("The value of a failure result can not be accessed.");
-
+    
+    /// <summary>
+    /// Gets paginated basic information.
+    /// </summary>
+    /// <param name="value"></param>
+    /// <param name="isSuccess"></param>
+    /// <param name="error"></param>
+    /// <param name="pageIndex"></param>
+    /// <param name="totalPages"></param>
+    /// <param name="totalItems"></param>
+    /// <param name="showPagination"></param>
+    /// <returns>Paginated result with required information for paginated data such as PageIndex, TotalPages, TotalItems and ShowPagination.</returns>
     public static Result<TValue> CreatePaginatedResult(TValue value, bool isSuccess, Error error, int? pageIndex = null,
         int? totalPages = null, int? totalItems = null,
         bool? showPagination = null)
