@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
 
     <PackageId>Sadin.Common</PackageId>
-    <Version>1.0.7</Version>
+    <Version>1.0.9</Version>
     <Authors>Kamran Sadin</Authors>
     <Company>Sadin</Company>
     <CopyRight>Copyright (c) 2022 SadinCo.</CopyRight>
@@ -18,11 +18,12 @@
     <PackageTags>Sadin,Kamran,utility,dotnet,tools</PackageTags>
     <Title>Sadin.Common</Title>
     <Description>Common files and classes for Sadin microservices</Description>
-    <ReleaseNotes>Adding static method to create paginated result.</ReleaseNotes>
+    <ReleaseNotes>Adding integration event abstraction.</ReleaseNotes>
     <RepositoryUrl>https://github.com/A-Programmer/sadin.common</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
     <PackageReference Include="MediatR" Version="12.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
