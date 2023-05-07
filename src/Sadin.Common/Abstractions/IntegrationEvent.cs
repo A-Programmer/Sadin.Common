@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace Sadin.Common.Abstractions;
 
-public record IntegrationEvent
+public record IntegrationEvent : INotification
 {        
     public IntegrationEvent()
     {

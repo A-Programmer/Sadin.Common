@@ -1,6 +1,6 @@
 using Sadin.Common.Abstractions;
 
-namespace Sadin.Common.Result;
+namespace Sadin.Common;
 
 public sealed class ValidationResult : Result, IValidationResult
 {
