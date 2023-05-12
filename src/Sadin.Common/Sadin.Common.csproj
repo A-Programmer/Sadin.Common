@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
 
     <PackageId>Sadin.Common</PackageId>
-    <Version>1.0.10</Version>
+    <Version>1.0.11</Version>
     <Authors>Kamran Sadin</Authors>
     <Company>Sadin</Company>
     <CopyRight>Copyright (c) 2022 SadinCo.</CopyRight>
